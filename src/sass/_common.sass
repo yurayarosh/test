@@ -1,0 +1,93 @@
+// +font('roboto-regular', 'roboto-regular-webfont')
+
+// =reg
+//   font-family: 'roboto-regular', Arial, sans-serif
+
+*
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0)
+
+a
+  text-decoration: none
+  color: inherit
+
+body
+  background: #FFF
+  line-height: 1.4
+  font-size: 16px
+  // +reg
+  // color: $c-text
+  +no-scroll
+  overflow: hidden
+  background-color: #000
+
+
+.icon
+  display: inline-block
+  fill: red
+  font-size: 100px
+
+.icon-rect
+  fill: none
+  stroke: #000
+  stroke-width: 3
+  transition: stroke-dashoffset .3s
+  width: 300px
+  height: 100px
+  stroke-dasharray: 1000
+  
+  stroke-dashoffset: 1000
+  +hover
+    stroke-dashoffset: 0
+
+
+.custom-select
+  $this: &
+  max-width: 200px
+  user-select: none
+  position: relative
+  select
+    position: absolute
+    visibility: hidden
+    opacity: 0
+  &.is-open
+    #{$this}__panel
+      visibility: visible
+      opacity: 1
+  &__opener
+    border: 1px solid  #ccc
+    padding: 5px 10px
+  &__panel
+    visibility: hidden
+    opacity: 0
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    z-index: 1
+    background-color: #ccc
+    max-height: 200px
+    overflow: auto
+    // overflow: hidden
+  &__option
+    padding: 5px 10px
+    cursor: pointer 
+  &__optgroup
+    &::before
+      content: attr(data-label)
+  &__options
+    // position: absolute
+    // bottom: 0
+    // left: 0
+    // top: 20px
+    // width: 100%
+    // overflow: auto
+    padding-top: 20px
+    max-height: 200px
+    overflow: auto
+  &__panel-item
+    position: absolute
+    top: 0
+    left: 0
+    height: 20px
+    width: 100%
