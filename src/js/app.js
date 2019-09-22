@@ -8,7 +8,10 @@ import createNoise from './components/noise/noise';
 // import smoot from './components/smooth.js'
 // import 'smooth-scrolling/smooth-scrolling';
 // import './components/triangles';
-import './components/triangles/triangles';
+// import './components/triangles/triangles';
+// import './components/smooth';
+
+import './components/dotsGrid';
 
 $(() => {
   sayHello();

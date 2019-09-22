@@ -13,20 +13,23 @@
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
 
     <!-- BEGIN content -->
-    <div class="out{% if outClass %} {{ outClass }}{% endif %}">
+    <div class="out{% if outClass %} {{ outClass }}{% endif %} vs-section">
       {% include "partials/_header.html" %}
       <!-- begin main -->
       <main class="main{% if mainClass %} {{ mainClass }}{% endif %}">
         {% block content %}{% endblock %}
       </main>
       <!-- end main -->      
-      {% include "partials/_footer.html" %}
+      {% include "partials/_footer.html" %} 
+
+
     </div>
     <!-- END content -->
 
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
-    <!-- END scripts -->
+
+     <!-- END scripts -->
 
   </body>
 </html>
