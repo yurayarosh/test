@@ -1,0 +1,33 @@
+---
+title: Index page
+page: home
+outClass: ''
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  <!-- begin hero -->
+  <section class="hero hero--simple">
+      <h1>hello from home page</h1>
+
+      <!-- begin slider -->
+      <div class="slider__wrap">
+        <div class="swiper-container slider js-slider" data-slider="default">
+          <div class="swiper-wrapper">
+            {% for i in range(0, 5) %}
+              <div class="swiper-slide slide">
+                <h2 class="slide__title">slide {{ i + 1 }}</h2>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+    
+        <div class="slider__navigation">
+          <button class="slider__prev js-slider-prev">prev</button>
+          <button class="slider__next js-slider-next">next</button>
+        </div>
+      </div>
+      <!-- end slider -->
+  </section>
+  <!-- end hero -->
+{% endblock %}

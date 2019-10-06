@@ -1,5 +1,14 @@
 <!-- begin header -->
-<header class="header">
-  hello from header
+<header class="header{% if headerClassMod  %} {{ headerClassMod }}{% endif %}">
+  {{ mixins.list(
+    name = 'nav',
+    modifications = { wrap: '', item: '', link: '' },
+    list = [
+      { link: 'home', href: 'home.html' },
+      { link: 'about', href: 'about.html' },
+      { link: 'blog', href: 'blog.html' },
+      { link: 'products', href: 'products.html' }
+    ]
+  ) }}
 </header>
 <!-- end header -->

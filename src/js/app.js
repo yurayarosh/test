@@ -11,12 +11,25 @@ import createNoise from './components/noise/noise';
 // import './components/triangles/triangles';
 // import './components/smooth';
 
-import './components/dotsGrid';
+// import './components/dotsGrid';
+
+import mySlider from './components/sliders/setSliders';
+
+import PageRouter from './components/barbaTransitions';
 
 $(() => {
   sayHello();
   setHTMLClassNames();
-  setLazy();
-  // createNoise();
-  // smooth()
+
+
+  const wrap = document.querySelector('.out');
+  const router = new PageRouter(wrap);
+  router.initScripts = () => {
+    setLazy();
+    // createNoise();
+    // smooth()
+
+    mySlider.init();
+  };
+  router.init();
 });

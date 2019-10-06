@@ -1,0 +1,36 @@
+---
+title: products
+page: products
+outClass: ''
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+ <!-- begin hero -->
+ <section class="hero hero--simple">
+    <h1>hello from products page</h1>
+    <!-- begin products -->
+  <div class="products">
+      <!-- begin product -->
+      <a href="product-01.html" class="product js-lazy" data-cover-img="https://source.unsplash.com/Bs-zngH79Ds/1920x800" data-background-image="https://source.unsplash.com/Bs-zngH79Ds/400x400">
+        <h2 class="product__title">some awesome product</h2>
+      </a>
+      <!-- end product -->
+      <!-- begin product -->
+      <a href="product-02.html" class="product js-lazy" data-cover-img="https://source.unsplash.com/6LBBOwkPzyQ/1920x800" data-background-image="https://source.unsplash.com/6LBBOwkPzyQ/400x400">
+        <h2 class="product__title">some awesome product</h2>
+      </a>
+      <!-- end product -->
+      <!-- begin product -->
+      <a href="product-03.html" class="product js-lazy" data-cover-img="https://source.unsplash.com/Bs-zngH79Ds/1920x800" data-background-image="https://source.unsplash.com/Bs-zngH79Ds/400x400">
+        <h2 class="product__title">some awesome product</h2>
+      </a>
+      <!-- end product -->
+
+      
+  </div>
+  <!-- end products -->
+ </section>
+ <!-- end hero -->
+{% endblock %}

@@ -1,4 +1,7 @@
 ProjectTitle: template
 
 PageList:
-- file: page.html
+- file: home.html
+- file: about.html
+- file: blog.html
+- file: products.html

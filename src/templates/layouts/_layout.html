@@ -13,11 +13,13 @@
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
 
     <!-- BEGIN content -->
-    <div class="out{% if outClass %} {{ outClass }}{% endif %} vs-section">
+    <div class="out{% if outClass %} {{ outClass }}{% endif %}">
       {% include "partials/_header.html" %}
       <!-- begin main -->
-      <main class="main{% if mainClass %} {{ mainClass }}{% endif %}">
-        {% block content %}{% endblock %}
+      <main class="main{% if mainClass %} {{ mainClass }}{% endif %}" data-barba="wrapper">
+        <div class="content" data-barba="container" data-barba-namespace="{{ page }}">
+            {% block content %}{% endblock %}
+        </div>        
       </main>
       <!-- end main -->      
       {% include "partials/_footer.html" %} 
