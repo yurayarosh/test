@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Index page</title>
+    <title>about</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -11,18 +11,30 @@
   </head>
   <body>
     <!-- BEGIN content -->
-    <div class="out vs-section">
+    <div class="out">
       <!-- begin header -->
-      <header class="header"> hello from header </header>
+      <header class="header">
+        <!-- begin nav -->
+        <nav class="nav">
+          <ul>
+            <li><a href="home.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="products.html">products</a></li>
+          </ul>
+        </nav>
+        <!-- end nav -->
+      </header>
       <!-- end header -->
       <!-- begin main -->
-      <main class="main">
-        <!-- begin hero -->
-        <section class="hero">
-          <h1>hello from hero</h1>
-        </section>
-        <!-- end hero -->
-        <div class="canvas-grid js-canvas-grid">
+      <main class="main" data-barba="wrapper">
+        <div class="content" data-barba="container" data-barba-namespace="about">
+          <!-- begin hero -->
+          <section class="hero hero--simple">
+            <h1>hello from about page</h1>
+            <img class="js-lazy" src="" data-src="./img/facebook.svg" alt="">
+          </section>
+          <!-- end hero -->
         </div>
       </main>
       <!-- end main -->
