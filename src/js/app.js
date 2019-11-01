@@ -1,4 +1,5 @@
 import $ from 'jquery';
+// import dragscroll from 'dragscroll';
 // import '@babel/polyfill';
 import './lib/polyfill';
 import sayHello from './lib/sayHello';
@@ -16,11 +17,21 @@ import createNoise from './components/noise/noise';
 import mySlider from './components/sliders/setSliders';
 
 import PageRouter from './components/barbaTransitions';
+// import './components/pixiTitle';
+
+import './components/swipeEvents';
+
+import setPopups from './components/setPopups';
+
 
 $(() => {
   sayHello();
   setHTMLClassNames();
+  setLazy();
 
+  // createNoise();
+
+  setPopups();
 
   const wrap = document.querySelector('.out');
   const router = new PageRouter(wrap);

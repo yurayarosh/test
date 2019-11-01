@@ -21,19 +21,6 @@ body
 .out
   position: relative
   z-index: 1
-  // min-height: 100vh
-  height: calc(200vh - 17px)
-  &--horizontal
-    +flex
-    .header
-      flex: 0 0 100%
-    .footer
-      flex: 0 0 100%
-    .main
-      flex: 0 0 500px
-
-
-
 
 
 .canvas-bg
@@ -173,10 +160,55 @@ body
   right: 0
   left: 0
   z-index: 20
-  transform-origin: top left
+  transform-origin: 0 0
   +before
     +coverdiv
     z-index: 0
     background-color: rgba($black, .4)
+  &.is-animate
+    +tr(transform 1s)
+
+.btn
+  display: inline-block
+  background-color: $black
+  color: $white
+  padding: .5em
+  text-align: center
+  min-width: 200px
+  text-transform: uppercase
+
+.popup
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 20
+  background-color: rgba($black, .7)
+  padding: 15px
+  overflow: auto
+  +vertical
+  visibility: hidden
+  opacity: 0
+  &.is-active
+    visibility: visible
+    opacity: 1
+  &__inner
+    display: inline-block
+    vertical-align: middle
+    background-color: $white
+    width: 100%
+    max-width: 450px
+    font-size: $fz
+    padding: 50px
+    position: relative
+  &__close
+    +icon-close(20, 1, currentColor)
+    position: absolute
+    top: 15px
+    right: 15px
+    z-index: 1
+
+
     
     

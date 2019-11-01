@@ -141,31 +141,28 @@ export default class PageRouter {
   }
 
   _initBarba() {
-    const self = this;
     barba.init({
       transitions: [
         {
           name: 'default-transition',
           sync: false,
-          appear() {
-            if (self.initScripts) {
-              self.initScripts();
+          appear: () => {
+            if (this.initScripts) {
+              this.initScripts();
             }
           },
-          leave({ current }) {
-            return new Promise((resolve) => {
-              const { container } = current;
-              self.defaultLeave(container, resolve);
-            });
-          },
-          enter({ next }) {
-            if (self.initScripts) {
-              self.initScripts();
+          leave: ({ current }) => new Promise((resolve) => {
+            const { container } = current;
+            this.defaultLeave(container, resolve);
+          }),
+          enter: ({ next }) => {
+            if (this.initScripts) {
+              this.initScripts();
             }
             console.log('enter new page default transition');
             const { container } = next;
 
-            self.defaultEnter(container);
+            this.defaultEnter(container);
           },
 
         },
@@ -175,19 +172,17 @@ export default class PageRouter {
           from: {
             custom: ({ trigger }) => trigger.classList && trigger.classList.contains('product'),
           },
-          leave(data) {
-            return new Promise((resolve) => {
-              self.productsPageLeave(data, resolve);
-            });
-          },
-          enter({ next }) {
-            if (self.initScripts) {
-              self.initScripts();
+          leave: (data) => new Promise((resolve) => {
+            this.productsPageLeave(data, resolve);
+          }),
+          enter: ({ next }) => {
+            if (this.initScripts) {
+              this.initScripts();
             }
             console.log('enter product-page');
 
             const { container } = next;
-            self.productPageEnter(container);
+            this.productPageEnter(container);
           },
         },
       ],
