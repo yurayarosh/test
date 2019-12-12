@@ -1,19 +1,19 @@
 // width
 =r($width)
-  @media only screen and (max-width: $width+ "px")
+  @media (max-width: $width+ "px")
     @content
 
 =rmin($width)
-  @media only screen and (min-width: $width+ "px")
+  @media (min-width: $width+ "px")
     @content
 
 // height
 =rh($height)
-  @media only screen and (max-height: $height + "px")
+  @media (max-height: $height + "px")
     @content
 
 =rhmin($height)
-  @media only screen and (min-height: $height + "px")
+  @media (min-height: $height + "px")
     @content
 
 @mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px)
@@ -41,8 +41,8 @@
   position: absolute
   top: 0
   left: 0
-  width: 100%
-  height: 100%
+  bottom: 0
+  right: 0
 
 =cover
   background-repeat: no-repeat
@@ -71,9 +71,6 @@
   font: 0/0 a
   text-shadow: none
   color: transparent
-
-=hidetext
-  +hide-text
 
 =vertical
   text-align: center
@@ -210,7 +207,33 @@
   flex-direction: $flex-direction
   flex-wrap: $flex-wrap
 
-=inline-flex($justify-content: flex-start, $align-items: normal)
+=inline-flex($justify-content: flex-start, $align-items: normal, $flex-direction: row, $flex-wrap: nowrap)
   display: inline-flex
   justify-content: $justify-content
   align-items: $align-items
+  flex-direction: $flex-direction
+  flex-wrap: $flex-wrap
+
+@function em($size, $context: 16)
+  @return ($size/$context) * 1em
+
+=hidden
+  visibility: hidden
+  opacity: 0
+  
+=visible
+  visibility: visible
+  opacity: 1
+
+=list-bullet
+  &::before
+    content: '\2022'
+    display: inline-block
+
+=counter($var, $sep)
+  counter-reset: list + $var
+  > li
+    &:before
+      content: counter(list + $var) $sep
+      counter-increment: list + $var
+      

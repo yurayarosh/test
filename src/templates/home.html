@@ -12,7 +12,14 @@ outClass: ''
 
       <!-- begin slider -->
       <div class="slider__wrap">
-        <div class="swiper-container slider js-slider" data-slider="default">
+        <div
+          class="swiper-container slider js-slider"
+          data-slider="default"
+          data-json-expample='
+          {
+            "first-item": "some-data"
+          }
+          '>
           <div class="swiper-wrapper">
             {% for i in range(0, 5) %}
               <div class="swiper-slide slide">
@@ -30,6 +37,49 @@ outClass: ''
       <!-- end slider -->
 
       <button class="btn js-popup-open" data-popup-target="popup">open popup</button>
+{# 
+      <!-- begin accordion -->
+      <div class="accordion js-accordion">
+        <div class="accordion-item">
+            <div class="accordion-item__title js-accordion-btn"  data-accordion-btn="">title</div>
+            <div class="accordion-item__content js-accordion-item"  data-accordion-item="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem atque officia placeat aliquam asperiores quo assumenda non, commodi amet earum nam? Tempore, accusantium dolor reprehenderit laborum illo ullam non mollitia.</div>
+          </div>
+        {% for i in range(0, 5) %}
+          <div class="accordion-item">
+            <div class="accordion-item__title js-accordion-btn" data-block="blah" data-accordion-btn="{{i}}">title</div>
+            <div class="accordion-item__content js-accordion-item" data-block="blah" data-accordion-item="{{i}}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem atque officia placeat aliquam asperiores quo assumenda non, commodi amet earum nam? Tempore, accusantium dolor reprehenderit laborum illo ullam non mollitia.</div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- end accordion --> #}
+
+      <!-- begin tabs -->
+      <div class="tabs js-tabs">
+        <div class="tabs__tabs">
+          {% for i in range(0, 2) %}
+            <button class="tabs__tab js-tabs-tab" data-block="tab" data-tabs-tab="{{ i }}">tab {{ i + 1 }}</button>
+          {% endfor %}
+        </div>
+        <div class="tabs__items">
+          {% for i in range(0, 2) %}
+            <div class="tabs__item js-tabs-item" data-tabs-item="{{ i }}">this is tab content <strong>N{{ i + 1 }}</strong></div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- end tabs -->
   </section>
   <!-- end hero -->
+
+
+<div
+  style="width: 600px;height: 400px"
+  class="js-scroll-video"
+  data-frames="20"
+  data-src="./img/frames/scene{frame}.jpg"></div>
+{# <video width="600" height="400"  class="js-scroll-video">
+  <source src="./video/video.mp4" type="video/mp4">
+</video> #}
+{# <input class="js-scroll-video-inut" value="0" type="range"> #}
+
+  {# {% include "partials/_page.html" %} #}
 {% endblock %}

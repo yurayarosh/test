@@ -1,6 +1,6 @@
 {
   "name": "starter-kit",
-  "version": "2.0.2",
+  "version": "2.0.8",
   "scripts": {
     "ghpages": "git subtree push --prefix build origin gh-pages",
     "build": "gulp build --production",
@@ -12,10 +12,11 @@
     ]
   },
   "browserslist": [
-    "last 2 versions",
+    "> 0.3%",
+    "not dead",
     "ie >= 11",
-    "Android > 4",
-    "IOS >= 10"
+    "IOS >= 10",
+    "Android >= 4.4"
   ],
   "authors": "yurayarosh",
   "devDependencies": {
@@ -30,9 +31,10 @@
     "del": "^5.0.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-formatter-pretty": "^2.1.1",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.0",
     "gulp-cheerio": "^0.6.3",
@@ -56,6 +58,7 @@
     "lint-staged": "^9.2.1",
     "lodash": "^4.17.15",
     "postcss-csso": "^3.0.0",
+    "prettier": "1.19.1",
     "require-yaml": "0.0.1",
     "vinyl-buffer": "^1.0.1",
     "webpack": "^4.39.2",
@@ -63,17 +66,21 @@
     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "core-js": "^3.4.1",
+    "intersection-observer": "^0.7.0",
     "@barba/core": "^2.6.0",
     "dragscroll": "0.0.8",
     "gsap": "^2.1.3",
     "jquery": "^3.4.1",
     "lozad": "^1.9.0",
+    "moment": "^2.24.0",
     "pixi-filters": "^3.0.3",
     "pixi.js": "^5.1.5",
     "pubsub-js": "^1.7.0",
+    "simplebar": "^5.0.7",
     "smooth-scrolling": "^2.3.12",
     "swiper": "^5.0.4",
-    "throttle-debounce": "^2.1.0"
+    "throttle-debounce": "^2.1.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }

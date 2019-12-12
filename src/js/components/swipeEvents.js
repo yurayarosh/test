@@ -77,7 +77,7 @@ export default class Swipe {
 
     this.callbacks.forEach((obj) => {
       if (obj.event === this.event) {
-        obj.callback();
+        obj.callback(this.swipeEvent);
       }
     });
   }
@@ -99,38 +99,37 @@ export default class Swipe {
     callbackInfo.event = event;
     callbackInfo.callback = callback;
 
-    this.callbacks = this.callbacks.filter((obj, i) => {
-      const removedCallback = callbackInfo.callback === obj.callback
-        && callbackInfo.event === obj.event;
-
-      if (!removedCallback) {
-        return obj;
-      }
-      return null;
-    });
+    this.callbacks = this.callbacks.filter((obj) => !(callbackInfo.callback === obj.callback
+        && callbackInfo.event === obj.event));
   }
 }
 
 const swipe = new Swipe();
 
-function down() {
-  console.log('down');
+function onSwipeDown(e) {
+  console.log('down', e);
 }
 
 
 swipe
-  .on('swipedown', down)
+  .on('swipedown', onSwipeDown)
   .on('swipedown', () => {
     console.log('down second');
   })
   .on('swiperight', () => {
     console.log('right');
     console.log(swipe);
+  })
+  .on('swipeleft', () => {
+    console.log('left');
+  })
+  .on('swipeup', () => {
+    console.log('up');
   });
 
 setTimeout(() => {
   swipe
-    .off('swipedown', down);
+    .off('swipedown', onSwipeDown);
 }, 3000);
 
 

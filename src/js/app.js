@@ -1,11 +1,16 @@
-import $ from 'jquery';
+import $ from 'jquery'
 // import dragscroll from 'dragscroll';
-// import '@babel/polyfill';
-import './lib/polyfill';
-import sayHello from './lib/sayHello';
-import setHTMLClassNames from './components/setHTMLClassNames';
-import setLazy from './components/setLazy';
-import createNoise from './components/noise/noise';
+import 'core-js/features/symbol'
+import 'core-js/features/array/from'
+import 'core-js/features/promise'
+import 'core-js/features/object/assign'
+import 'core-js/features/set'
+import 'intersection-observer'
+import './lib/polyfill'
+import sayHello from './lib/sayHello'
+import setHTMLClassNames from './components/setHTMLClassNames'
+import setLazy from './components/setLazy'
+import createNoise from './components/noise/noise'
 // import smoot from './components/smooth.js'
 // import 'smooth-scrolling/smooth-scrolling';
 // import './components/triangles';
@@ -14,33 +19,53 @@ import createNoise from './components/noise/noise';
 
 // import './components/dotsGrid';
 
-import mySlider from './components/sliders/setSliders';
+import mySlider from './components/sliders/setSliders'
 
-import PageRouter from './components/barbaTransitions';
+import PageRouter from './components/barbaTransitions'
 // import './components/pixiTitle';
 
-import './components/swipeEvents';
+import './components/swipeEvents'
 
-import setPopups from './components/setPopups';
+import setPopups from './components/setPopups'
 
+import './components/challenge'
+// import setScrollbar from './components/setScrollbar';
+
+// import './components/perlinNoise';
+
+import ajaxTest from './components/ajax'
+import videoScroll from './components/videoScroll'
+import './components/bemjs'
+import toggleMenu from './components/toggleMenu'
+import setAccordion from './components/setAccordion'
+import setTabs from './components/setTabs'
 
 $(() => {
-  sayHello();
-  setHTMLClassNames();
-  setLazy();
+  sayHello()
+  setHTMLClassNames()
+  setLazy()
 
   // createNoise();
 
-  setPopups();
+  setPopups()
+  toggleMenu()
+  setAccordion()
+  setTabs()
 
-  const wrap = document.querySelector('.out');
-  const router = new PageRouter(wrap);
+  // setScrollbar();
+
+  // ajaxTest();
+  videoScroll()
+
+  const wrap = document.querySelector('.out')
+  const router = new PageRouter(wrap)
   router.initScripts = () => {
-    setLazy();
+    setLazy()
     // createNoise();
     // smooth()
 
-    mySlider.init();
-  };
-  router.init();
-});
+    mySlider.init()
+    // setScrollbar();
+  }
+  router.init()
+})

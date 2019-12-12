@@ -1,8 +1,22 @@
 <!-- begin header -->
 <header class="header{% if headerClassMod  %} {{ headerClassMod }}{% endif %}">
+  <button class="burger js-burger" data-block="" data-menu-target=""><span></span></button>
+  <button class="burger burger-2 js-burger" data-block="burger-2" data-menu-target="nav-2"><span></span></button>
   {{ mixins.list(
     name = 'nav',
-    modifications = { wrap: '', item: '', link: '' },
+    attributes = { 'data-menu': '', 'data-block': 'nav' },
+    modifications = { wrap: 'js-menu', item: '', link: '' },
+    list = [
+      { link: 'home', href: 'home.html' },
+      { link: 'about', href: 'about.html' },
+      { link: 'blog', href: 'blog.html' },
+      { link: 'products', href: 'products.html' }
+    ]
+  ) }}
+  {{ mixins.list(
+    name = 'nav',
+    attributes = { 'data-menu': 'nav-2', 'data-block': 'nav-2' },
+    modifications = { wrap: 'nav-2 js-menu', item: '', link: '' },
     list = [
       { link: 'home', href: 'home.html' },
       { link: 'about', href: 'about.html' },

@@ -14,8 +14,20 @@
     <div class="out">
       <!-- begin header -->
       <header class="header">
+        <button class="burger js-burger" data-block="" data-menu-target=""><span></span></button>
+        <button class="burger burger-2 js-burger" data-block="burger-2" data-menu-target="nav-2"><span></span></button>
         <!-- begin nav -->
-        <nav class="nav">
+        <nav class="nav js-menu" data-menu="" data-block="nav">
+          <ul>
+            <li><a href="home.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="products.html">products</a></li>
+          </ul>
+        </nav>
+        <!-- end nav -->
+        <!-- begin nav -->
+        <nav class="nav nav-2 js-menu" data-menu="nav-2" data-block="nav-2">
           <ul>
             <li><a href="home.html">home</a></li>
             <li><a href="about.html">about</a></li>

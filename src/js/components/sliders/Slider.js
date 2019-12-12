@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/js/swiper';
 import setLazy from '../setLazy';
 import classNames from './classNames';
 

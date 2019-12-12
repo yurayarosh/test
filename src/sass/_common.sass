@@ -5,6 +5,7 @@ body
   min-width: 320px
   font-family: 'proximanova', Arial, sans-serif
   color: $c-text
+  min-height: 2000px
   +no-scroll
   overflow-x: hidden
   // overflow: hidden
@@ -143,8 +144,10 @@ body
       display: none
 
 .section
-  min-height: 100vh
+  // min-height: 100vh
   padding: 10%
+  padding-top: 50%
+  padding-bottom: 50%
   color: $white
   background-color: orange
   p
@@ -209,6 +212,76 @@ body
     right: 15px
     z-index: 1
 
+.parallax-img
+  overflow: hidden
+  font-size: 0
+  display: inline-block
+  width: 50%
+  padding-top: 40%
+  position: relative
+  margin-bottom: 500px
+  &__img
+    +cover
+    position: absolute
+    top: -50px
+    bottom: -50px
+    right: -50px
+    left: -50px
 
-    
+=scrollbar($background: $white)
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-track
+    background-color: black
+    box-shadow: inset 2px 0 0px $background, inset -2px 0 0px $background
+    outline: none
+  &::-webkit-scrollbar-thumb
+    background-color: lightblue
+    // border-radius: 3px
+    +tr(background-color .3s)
+    +hover
+      background-color: blue
+
+.scrollbar
+  +scrollbar(orange)
+  max-height: 500px
+  overflow: auto
+  position: relative
+  p
+    margin-bottom: 15px
+    max-width: none
+
+.simplebar-track.simplebar-vertical
+  position: absolute
+  right: 0
+  top: 0
+  bottom: 0
+  width: 8px
+  background-color: $white
+  z-index: 1
+
+// .simplebar-track.simplebar-vertical
+//   width: 8px
+//   background-color: #fff
+
+.simplebar-scrollbar
+  width: 100%
+  right: 0
+  background-color: $black
+  +before
+    display: none
+
+input[type=number]
+  display: inline-block
+  appearance: textfield
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button
+  appearance: none
+input[type="number"]::-ms-clear
+  display: none
+
+video
+  max-width: 100%
+
     

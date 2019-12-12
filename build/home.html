@@ -14,8 +14,20 @@
     <div class="out">
       <!-- begin header -->
       <header class="header">
+        <button class="burger js-burger" data-block="" data-menu-target=""><span></span></button>
+        <button class="burger burger-2 js-burger" data-block="burger-2" data-menu-target="nav-2"><span></span></button>
         <!-- begin nav -->
-        <nav class="nav">
+        <nav class="nav js-menu" data-menu="" data-block="nav">
+          <ul>
+            <li><a href="home.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="products.html">products</a></li>
+          </ul>
+        </nav>
+        <!-- end nav -->
+        <!-- begin nav -->
+        <nav class="nav nav-2 js-menu" data-menu="nav-2" data-block="nav-2">
           <ul>
             <li><a href="home.html">home</a></li>
             <li><a href="about.html">about</a></li>
@@ -34,7 +46,11 @@
             <h1>hello from home page</h1>
             <!-- begin slider -->
             <div class="slider__wrap">
-              <div class="swiper-container slider js-slider" data-slider="default">
+              <div class="swiper-container slider js-slider" data-slider="default" data-json-expample='
+          {
+            "first-item": "some-data"
+          }
+          '>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide slide">
                     <h2 class="slide__title">slide 1</h2>
@@ -60,8 +76,21 @@
             </div>
             <!-- end slider -->
             <button class="btn js-popup-open" data-popup-target="popup">open popup</button>
+            <!-- begin tabs -->
+            <div class="tabs js-tabs">
+              <div class="tabs__tabs">
+                <button class="tabs__tab js-tabs-tab" data-block="tab" data-tabs-tab="0">tab 1</button>
+                <button class="tabs__tab js-tabs-tab" data-block="tab" data-tabs-tab="1">tab 2</button>
+              </div>
+              <div class="tabs__items">
+                <div class="tabs__item js-tabs-item" data-tabs-item="0">this is tab content <strong>N1</strong></div>
+                <div class="tabs__item js-tabs-item" data-tabs-item="1">this is tab content <strong>N2</strong></div>
+              </div>
+            </div>
+            <!-- end tabs -->
           </section>
           <!-- end hero -->
+          <div style="width: 600px;height: 400px" class="js-scroll-video" data-frames="20" data-src="./img/frames/scene{frame}.jpg"></div>
         </div>
       </main>
       <!-- end main -->
