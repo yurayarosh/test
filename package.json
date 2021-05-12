@@ -79,7 +79,7 @@
     "pubsub-js": "^1.7.0",
     "simplebar": "^5.0.7",
     "smooth-scrolling": "^2.3.12",
-    "swiper": "^5.0.4",
+    "swiper": "^6.5.1",
     "throttle-debounce": "^2.1.0",
     "whatwg-fetch": "^3.0.0"
   }
